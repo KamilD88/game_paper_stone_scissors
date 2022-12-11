@@ -77,18 +77,14 @@ def player_2(pick_2y):
     return pick_2y
 
 
-# function to save pick for players depends on game mode
+# function to pick for players depends on game mode, udr logic who win the game
 def game_mode(mode):
-    global pick_1, pick_2
     if mode == "s":
         pick_1 = player_1(symbols_pick())
         pick_2 = computer_player()
     elif mode == "m":
         pick_1 = player_1(symbols_pick())
         pick_2 = player_2(symbols_pick())
-    return pick_1, pick_2
-
-def logic(pick_1, pick_2):
     if pick_1 == pick_2:
         return print("Remis - nikt nie wygrał")
     elif pick_1 == "p" and pick_2 == "k":
@@ -137,13 +133,10 @@ def logic(pick_1, pick_2):
 
 symbols = {"p": "papier", "k": "kamień", "n": "nożyce", "j": "jaszczurka", "s": "Spock"}
 
-
 welcome()
 
-logic(
 game_mode(
-     mode_input(
-         mode_choice()
+    mode_input(
+        mode_choice()
     )
- )
 )
