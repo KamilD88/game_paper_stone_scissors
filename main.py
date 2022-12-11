@@ -1,5 +1,4 @@
 import random
-import inspect
 
 
 # function say hello and print game rules
@@ -80,6 +79,7 @@ def player_2(pick_2y):
 
 # function to save pick for players depends on game mode
 def game_mode(mode):
+    global pick_1, pick_2
     if mode == "s":
         pick_1 = player_1(symbols_pick())
         pick_2 = computer_player()
@@ -140,7 +140,7 @@ symbols = {"p": "papier", "k": "kamień", "n": "nożyce", "j": "jaszczurka", "s"
 
 welcome()
 
-print(
+logic(
 game_mode(
      mode_input(
          mode_choice()
