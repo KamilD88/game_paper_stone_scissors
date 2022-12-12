@@ -77,58 +77,100 @@ def player_2(pick_2y):
     return pick_2y
 
 
-# function to pick for players depends on game mode, udr logic who win the game
+# function to pick for players depends on game mode, logic who win the game
 def game_mode(mode):
     if mode == "s":
         pick_1 = player_1(symbols_pick())
         pick_2 = computer_player()
+        if pick_1 == pick_2:
+            return print("Remis - nikt nie wygrał")
+        elif pick_1 == "p" and pick_2 == "k":
+            return print("wygrywa Player 1 - papier zakrywa kamień")
+        elif pick_1 == "p" and pick_2 == "s":
+            return print("wygrywa Player 1 - papier obala istnienie Spocka")
+        elif pick_1 == "k" and pick_2 == "j":
+            return print("wygrywa Player 1 - kamień zgniata jaszczurkę")
+        elif pick_1 == "k" and pick_2 == "n":
+            return print("wygrywa Player 1 - kamień tępi nożyce")
+        elif pick_1 == "n" and pick_2 == "p":
+            return print("wygrywa Player 1 - nożyce tną papier")
+        elif pick_1 == "n" and pick_2 == "j":
+            return print("wygrywa Player 1 - nożyce obcinają głowę jaszczurce")
+        elif pick_1 == "j" and pick_2 == "s":
+            return print("wygrywa Player 1 - jaszczurka zatruwa Spocka")
+        elif pick_1 == "j" and pick_2 == "p":
+            return print("wygrywa Player 1 - jaszczurka zjada papier")
+        elif pick_1 == "s" and pick_2 == "n":
+            return print("wygrywa Player 1 - Spock niszczy nożyce")
+        elif pick_1 == "s" and pick_2 == "k":
+            return print("wygrywa Player 1 - Spock dezintegruje kamień")
+        elif pick_2 == "p" and pick_1 == "k":
+            return print("wygrywa komputer - papier zakrywa kamień")
+        elif pick_2 == "p" and pick_1 == "s":
+            return print("wygrywa komputer - papier obala istnienie Spocka")
+        elif pick_2 == "k" and pick_1 == "j":
+            return print("wygrywa komputer - kamień zgniata jaszczurkę")
+        elif pick_2 == "k" and pick_1 == "n":
+            return print("wygrywa komputer - kamień tępi nożyce")
+        elif pick_2 == "n" and pick_1 == "p":
+            return print("wygrywa komputer - nożyce tną papier")
+        elif pick_2 == "n" and pick_1 == "j":
+            return print("wygrywa komputer - nożyce obcinają głowę jaszczurce")
+        elif pick_2 == "j" and pick_1 == "s":
+            return print("wygrywa komputer - jaszczurka zatruwa Spocka")
+        elif pick_2 == "j" and pick_1 == "p":
+            return print("wygrywa komputer - jaszczurka zjada papier")
+        elif pick_2 == "s" and pick_1 == "n":
+            return print("wygrywa komputer - Spock niszczy nożyce")
+        elif pick_2 == "s" and pick_1 == "k":
+            return print("wygrywa komputer - Spock dezintegruje kamień")
     elif mode == "m":
         pick_1 = player_1(symbols_pick())
         pick_2 = player_2(symbols_pick())
-    if pick_1 == pick_2:
-        return print("Remis - nikt nie wygrał")
-    elif pick_1 == "p" and pick_2 == "k":
-        return print("wygrywa papier - papier zakrywa kamień")
-    elif pick_1 == "p" and pick_2 == "s":
-        return print("wygrywa papier - papier obala istnienie Spocka")
-    elif pick_1 == "k" and pick_2 == "j":
-        return print("wygrywa kamień - kamień zgniata jaszczurkę")
-    elif pick_1 == "k" and pick_2 == "n":
-        return print("wygrywa kamień - kamień tępi nożyce")
-    elif pick_1 == "n" and pick_2 == "p":
-        return print("wygrywają nożyce - nożyce tną papier")
-    elif pick_1 == "n" and pick_2 == "j":
-        return print("wygrywają nożyce - nożyce obcinają głowę jaszczurce")
-    elif pick_1 == "j" and pick_2 == "s":
-        return print("wygrywa jaszczurka - jaszczurka zatruwa Spocka")
-    elif pick_1 == "j" and pick_2 == "p":
-        return print("wygrywa jaszczurka - jaszczurka zjada papier")
-    elif pick_1 == "s" and pick_2 == "n":
-        return print("wygrywa Spock - Spock niszczy nożyce")
-    elif pick_1 == "s" and pick_2 == "k":
-        return print("wygrywa Spock - Spock dezintegruje kamień")
-    elif pick_2 == "p" and pick_1 == "k":
-        return print("wygrywa papier - papier zakrywa kamień")
-    elif pick_2 == "p" and pick_1 == "s":
-        return print("wygrywa papier - papier obala istnienie Spocka")
-    elif pick_2 == "k" and pick_1 == "j":
-        return print("wygrywa kamień - kamień zgniata jaszczurkę")
-    elif pick_2 == "k" and pick_1 == "n":
-        return print("wygrywa kamień - kamień tępi nożyce")
-    elif pick_2 == "n" and pick_1 == "p":
-        return print("wygrywają nożyce - nożyce tną papier")
-    elif pick_2 == "n" and pick_1 == "j":
-        return print("wygrywają nożyce - nożyce obcinają głowę jaszczurce")
-    elif pick_2 == "j" and pick_1 == "s":
-        return print("wygrywa jaszczurka - jaszczurka zatruwa Spocka")
-    elif pick_2 == "j" and pick_1 == "p":
-        return print("wygrywa jaszczurka - jaszczurka zjada papier")
-    elif pick_2 == "s" and pick_1 == "n":
-        return print("wygrywa Spock - Spock niszczy nożyce")
-    elif pick_2 == "s" and pick_1 == "k":
-        return print("wygrywa Spock - Spock dezintegruje kamień")
-    else:
-        return print("błąd")
+        if pick_1 == pick_2:
+            return print("Remis - nikt nie wygrał")
+        elif pick_1 == "p" and pick_2 == "k":
+            return print("wygrywa Player 1 - papier zakrywa kamień")
+        elif pick_1 == "p" and pick_2 == "s":
+            return print("wygrywa Player 1 - papier obala istnienie Spocka")
+        elif pick_1 == "k" and pick_2 == "j":
+            return print("wygrywa Player 1 - kamień zgniata jaszczurkę")
+        elif pick_1 == "k" and pick_2 == "n":
+            return print("wygrywa Player 1 - kamień tępi nożyce")
+        elif pick_1 == "n" and pick_2 == "p":
+            return print("wygrywa Player 1 - nożyce tną papier")
+        elif pick_1 == "n" and pick_2 == "j":
+            return print("wygrywa Player 1 - nożyce obcinają głowę jaszczurce")
+        elif pick_1 == "j" and pick_2 == "s":
+            return print("wygrywa Player 1 - jaszczurka zatruwa Spocka")
+        elif pick_1 == "j" and pick_2 == "p":
+            return print("wygrywa Player 1 - jaszczurka zjada papier")
+        elif pick_1 == "s" and pick_2 == "n":
+            return print("wygrywa Player 1 - Spock niszczy nożyce")
+        elif pick_1 == "s" and pick_2 == "k":
+            return print("wygrywa Player 1 - Spock dezintegruje kamień")
+        elif pick_2 == "p" and pick_1 == "k":
+            return print("wygrywa Player 2 - papier zakrywa kamień")
+        elif pick_2 == "p" and pick_1 == "s":
+            return print("wygrywa Player 2 - papier obala istnienie Spocka")
+        elif pick_2 == "k" and pick_1 == "j":
+            return print("wygrywa Player 2 - kamień zgniata jaszczurkę")
+        elif pick_2 == "k" and pick_1 == "n":
+            return print("wygrywa Player 2 - kamień tępi nożyce")
+        elif pick_2 == "n" and pick_1 == "p":
+            return print("wygrywa Player 2 - nożyce tną papier")
+        elif pick_2 == "n" and pick_1 == "j":
+            return print("wygrywa Player 2 - nożyce obcinają głowę jaszczurce")
+        elif pick_2 == "j" and pick_1 == "s":
+            return print("wygrywa Player 2 - jaszczurka zatruwa Spocka")
+        elif pick_2 == "j" and pick_1 == "p":
+            return print("wygrywa Player 2 - jaszczurka zjada papier")
+        elif pick_2 == "s" and pick_1 == "n":
+            return print("wygrywa Player 2 - Spock niszczy nożyce")
+        elif pick_2 == "s" and pick_1 == "k":
+            return print("wygrywa Player 2 - Spock dezintegruje kamień")
+        else:
+            return print("błąd")
 
 
 symbols = {"p": "papier", "k": "kamień", "n": "nożyce", "j": "jaszczurka", "s": "Spock"}
